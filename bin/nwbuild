@@ -48,7 +48,7 @@ if (argv.h || argv.help) {
 
 // Update notification
 var notifier = updateNotifier({
-    packagePath: './../package.json'
+    pkg: require('./../package.json')
 });
 if (notifier.update) {
     notifier.notify();
@@ -58,7 +58,7 @@ if (notifier.update) {
 var files = argv._[0];
 if(!files) {
     optimist.showHelp();
-    process.exit(0);
+    process.exit(1);
 }
 
 var options = {
@@ -93,6 +93,8 @@ var np = (argv.r ? nw.run() : nw.build());
 np.then(function() {
     process.exit(0);
 }).catch (function(error) {
-    if (error) console.error(error);
-    process.exit(0);
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    }
 });

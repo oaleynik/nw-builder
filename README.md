@@ -1,4 +1,4 @@
-# nw-builder [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
+# nw-builder [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url] [![Join the chat at https://gitter.im/nwjs/nw-builder](https://badges.gitter.im/nwjs/nw-builder.svg)](https://gitter.im/nwjs/nw-builder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![NPM](https://nodei.co/npm/nw-builder.png?downloads=true)](https://nodei.co/npm/nw-builder/)
 
@@ -45,8 +45,8 @@ Or use the module:
 var NwBuilder = require('nw-builder');
 var nw = new NwBuilder({
     files: './path/to/nwfiles/**/**', // use the glob format
-    platforms: ['osx32', 'osx64', 'win32', 'win64'],
-    version: '0.12.3'
+    platforms: ['osx32', 'win32', 'win64'],
+    version: '0.14.6'
 });
 
 //Log stuff you want
@@ -257,6 +257,14 @@ To get around it, run `ulimit -n 1024` (or add it to your `~/.bash_profile`). Fo
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Release History
+- 2016-08-28    `3.0.0` bumping graceful-fs-extra dependency to 2.0.0.
+- 2016-08-14    `2.2.7` fix for macIcns option when using NW.js 0.12.3
+- 2016-07-31    `2.2.6` fix for OS X caching
+- 2016-07-03    `2.2.5` fix for update-notifier usage in bin
+- 2016-07-03    `2.2.4` fix for syntax error in CLI
+- 2016-07-02    `2.2.3` a few small fixes for the run option and more
+- 2016-07-02    `2.2.2` fix for cache check of some legacy versions
+- 2016-07-02    `2.2.1` supports newer NW.js versions (via http://nwjs.io/versions.json), plus other fixes.
 - 2015-12-18    `2.2.0` added `zip` option.
 - 2015-12-06    `2.1.0` added `cacheDir` command-line option, fix for no info being passed back, etc.
 - 2015-06-28    `2.0.2` put upper bound to semver check for windows.
@@ -283,8 +291,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 [npm-url]: https://www.npmjs.com/package/nw-builder
 [npm-image]: https://img.shields.io/npm/v/nw-builder.svg?style=flat
 
-[travis-url]: https://travis-ci.org/mllrsohn/nw-builder
-[travis-image]: https://img.shields.io/travis/mllrsohn/nw-builder/master.svg?style=flat
+[travis-url]: https://travis-ci.org/nwjs/nw-builder
+[travis-image]: https://img.shields.io/travis/nwjs/nw-builder/master.svg?style=flat
 
-[depstat-url]: https://david-dm.org/mllrsohn/nw-builder
-[depstat-image]: https://david-dm.org/mllrsohn/nw-builder.svg?style=flat
+[depstat-url]: https://david-dm.org/nwjs/nw-builder
+[depstat-image]: https://david-dm.org/nwjs/nw-builder.svg?style=flat
